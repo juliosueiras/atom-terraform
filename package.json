@@ -1,0 +1,55 @@
+{
+  "name": "atom-terraform",
+  "main": "./lib/atom-terraform",
+  "version": "0.0.0",
+  "description": "A short description of your package",
+  "keywords": [],
+  "activationCommands": {
+    "atom-workspace": "atom-terraform:toggle"
+  },
+  "repository": "https://github.com/atom/atom-terraform",
+  "license": "MIT",
+  "enhancedScopes": [
+    "source.terraform"
+  ],
+  "engines": {
+    "atom": ">=1.21.0"
+  },
+  "dependencies": {
+    "atom-languageclient": "^0.9.9"
+  },
+  "providedServices": {
+    "autocomplete.provider": {
+      "versions": {
+        "4.0.0": "provideAutocomplete"
+      }
+    },
+    "definitions": {
+      "versions": {
+        "0.1.0": "provideDefinitions"
+      }
+    },
+    "find-references": {
+      "versions": {
+        "0.1.0": "provideFindReferences"
+      }
+    },
+    "outline-view": {
+      "versions": {
+        "0.1.0": "provideOutlines"
+      }
+    },
+    "linter": {
+      "versions": {
+        "2.0.0": "provideLinter"
+      }
+    }
+  },
+  "configSchema": {
+    "commandPath": {
+      "type": "string",
+      "default": "terraform-lsp",
+      "description": "Path to the terraform-lsp command."
+    }
+  }
+}
